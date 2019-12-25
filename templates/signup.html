@@ -1,0 +1,22 @@
+{%extends 'index.html'%}
+{%block content%}
+<div style="background-color: orange;">
+    <h1 style="text-align: center;">Registration Form</h1>
+    <form method="post" style="text-align: center;">
+
+        {% csrf_token %}
+        Username: <input type="text" name='username'> <br> 
+
+        First name:<input type="text" name='fname' id="fname"><br>
+
+        Last name:<input type="text" name="lname" id="lname"><br>
+
+        Email:          <input type="email" name='email'><br>
+
+        Password:<input type="password" name="password"><br>
+
+        <button type="submit" style="text-align: left;">Register</button>
+        <button type="reset" style="text-align: right;">Reset</button>
+        </div>
+    </form></div>
+{%endblock%}

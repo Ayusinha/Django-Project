@@ -1,0 +1,11 @@
+{%extends 'index.html'%}
+{%block content%}
+<div style="background-color: azure;">
+<h1>List of all the user :</h1>
+<ul>
+    {% for x in data  %}
+    <li>{{x.first_name}} {{x.last_name}}</li>
+    {% endfor %}
+</ul>
+</div>
+{%endblock%}

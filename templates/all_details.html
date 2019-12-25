@@ -1,0 +1,9 @@
+<h1>All Details</h1>
+{% for x in data %}
+    <ul>
+        <li>{{x.username}}</li>
+        <li>{{x.first_name}} {{x.last_name}}</li>
+        <li>{{x.email}}</li>
+    </ul>
+    <h4>Next user</h4>
+{% endfor %}
