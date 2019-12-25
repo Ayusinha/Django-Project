@@ -24,9 +24,15 @@
           </ul>
         </div>
       </nav>
+
+    <div>
+      {% for message in messages %}
+        <p style="color: crimson;"> {{message}} </p>
+      {% endfor %}
+    </div>
     {% block content %}
 
     {% endblock %}
-    <footer><h1>Footer</h1></footer>
+    <footer><h1>See you again!</h1></footer>
 </body>
 </html>

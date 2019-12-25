@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
-
+{% load socialaccount %}
+{% providers_media_js %}
 {%block content%}
     <div style="background-color: chartreuse;">
     <h1 style="text-align: center;">Hello welcome to LoginPage<br></h1>
@@ -8,12 +9,20 @@
 
         {% csrf_token %}
 
-        <p><h4>Username:</h4><input type="text" name='username'></p><br>
+        <p><h4>Username:</h4><input type="text" name='username' placeholder="username"></p><br>
 
-        <p><h4>Password: </h4><input type="password" name='password'></p><br>
+        <p><h4>Password: </h4><input type="password" name='password' placeholder="password"></p><br>
 
         <button type="submit"  style="text-align: left;" >Sign In</button>
         <button type="button" style="text-align: center;"><a href="/signup/" style="text-decoration: none; color:black">Sign Up</a></button>
         <button type="reset" style="text-align: right;">Enter again</button>
+
+        <br>
+
+        <h4 style="text-align: center;">----------------------Or signin using--------------------</h4>
+
+        <button style="background-color: #1D3C78; "><a style="margin: auto; text-decoration: none;color:white;" href="{% provider_login_url "facebook" method="oauth2" %}">Facebook</a></button>
+
+        <button style="background-color: darkred; "><a style="margin: auto; text-decoration: none;color:white;" href="{% provider_login_url "google" %}">Google</a></button>
     </form></div>
 {%endblock%}
